@@ -1,0 +1,165 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 614.45775618062589,
+        "y": 110.27315579535025
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1327.715458017828,
+            "y": 369.18725166235794
+          },
+          "nodeIndex": "D_Security_Fin_Loc",
+          "nodeLineageTag": "d85fc81b-f238-4c6a-8236-a44f06ed9433",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1043.4577561806259,
+            "y": 298.27315579535025
+          },
+          "nodeIndex": "DWH D_Finance_CE",
+          "nodeLineageTag": "97f8aa06-9c2d-43d8-ae6d-efee215cda4b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 402.42451197815865
+          },
+          "nodeIndex": "PBI V_D_AP_Notes",
+          "nodeLineageTag": "2bd7f05b-a4f7-4bd9-befb-32d759c3cc7b",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 745.46500706629058,
+            "y": -50
+          },
+          "nodeIndex": "PBI V_D_Date",
+          "nodeLineageTag": "044ce19a-ed41-45b4-81b9-44cc26b2bc88",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 186.23262858557587,
+            "y": 654.91252637434275
+          },
+          "nodeIndex": "PBI V_D_Employee",
+          "nodeLineageTag": "7596acde-5e1f-46e0-9f4c-e5e440188aa0",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 475.86005471191788,
+            "y": 666.62540071623357
+          },
+          "nodeIndex": "PBI V_D_GL_Account_Exp",
+          "nodeLineageTag": "0f51ba6b-3257-491f-ac32-906f9c8f6b25",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 166.07168529541332,
+            "y": 50.49882394555209
+          },
+          "nodeIndex": "PBI V_D_Project",
+          "nodeLineageTag": "4e16b53c-f6ad-4b78-94ac-bff41dd266a5",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 455.95820902628748,
+            "y": -40.462414029513184
+          },
+          "nodeIndex": "PBI V_D_Task",
+          "nodeLineageTag": "dbb69cc8-0c87-4979-a96b-6910e49bc19b",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 774.13080939770043,
+            "y": 657.79019236566774
+          },
+          "nodeIndex": "PBI V_D_Types",
+          "nodeLineageTag": "a45b500f-4504-472c-b32c-36c0ae6a88be",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 476.14174451614304,
+            "y": 307.26072214454723
+          },
+          "nodeIndex": "PBI V_F_Expense",
+          "nodeLineageTag": "a0fd6d55-3a53-45f2-872d-084f17ed6d65",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1561.715458017828,
+            "y": 432.31270035811679
+          },
+          "nodeIndex": "Definitions",
+          "nodeLineageTag": "60225dc7-2143-4d2c-a446-91c5a6717304",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

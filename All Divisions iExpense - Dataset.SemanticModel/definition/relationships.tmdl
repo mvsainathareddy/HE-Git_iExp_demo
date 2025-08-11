@@ -1,0 +1,37 @@
+relationship f1fa6d9c-a1c6-40ad-ba4d-79a413648ec3
+	fromColumn: 'PBI V_F_Expense'.KEY_Project
+	toColumn: 'PBI V_D_Project'.KEY_Project
+
+relationship 7dcdd01c-a6fb-407a-9f7f-34b31abe0934
+	fromColumn: 'PBI V_F_Expense'.Key_Notes
+	toColumn: 'PBI V_D_AP_Notes'.Key_Notes
+
+relationship 4f145195-e94b-4435-a803-459a3feede8e
+	fromColumn: 'PBI V_F_Expense'.Key_Type
+	toColumn: 'PBI V_D_Types'.Key_Type
+
+relationship 215d903d-7831-4bf8-b38c-9fe3573da687
+	fromColumn: 'PBI V_F_Expense'.KEY_Requestor
+	toColumn: 'PBI V_D_Employee'.KEY_Employee
+
+relationship 9ecc0101-62ac-c7c6-1171-8ef576b6557b
+	fromColumn: 'PBI V_F_Expense'.EXPENSE_DT
+	toColumn: 'PBI V_D_Date'.FullDate
+
+relationship be78fe27-6c24-4867-ac53-58ade27d4dba
+	fromColumn: 'PBI V_F_Expense'.KEY_GL_ACCOUNT
+	toColumn: 'PBI V_D_GL_Account_Exp'.KEY_GL_ACCOUNT
+
+relationship c57e4d44-b778-4410-805a-cfe6b0647cb8
+	fromColumn: 'PBI V_F_Expense'.KEY_TASK
+	toColumn: 'PBI V_D_Task'.KEY_Task
+
+relationship 36cafa79-d104-40af-a71f-a29734dff303
+	fromColumn: 'PBI V_F_Expense'.Key_Finance_Location
+	toColumn: 'DWH D_Finance_CE'.KEY_Finance_Location
+
+relationship b85ca07a-3ca9-4e7a-83c0-a1302d7cc59e
+	crossFilteringBehavior: bothDirections
+	fromColumn: D_Security_Fin_Loc.VALUE
+	toColumn: 'DWH D_Finance_CE'.KEY_Finance_Location
+

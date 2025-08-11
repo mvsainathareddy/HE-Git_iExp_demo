@@ -1,0 +1,46 @@
+table 'PBI V_D_Employee'
+	lineageTag: 7596acde-5e1f-46e0-9f4c-e5e440188aa0
+
+	column KEY_Employee
+		dataType: string
+		lineageTag: 38424c1b-6ee3-4be6-8c52-ed07e410bcd3
+		summarizeBy: none
+		sourceColumn: KEY_Employee
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employee_Id
+		dataType: string
+		lineageTag: e2365bd9-26d7-41c1-a3dc-b43ec1affac4
+		summarizeBy: none
+		sourceColumn: Employee_Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Full_Name
+		dataType: string
+		lineageTag: 5ed28518-4c2e-44bc-9f2e-b52a1a3d292d
+		summarizeBy: none
+		sourceColumn: Full_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employee_Number
+		dataType: string
+		lineageTag: 941ccfdb-5eb9-47ea-ad2c-93451101199f
+		summarizeBy: none
+		sourceColumn: Employee_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PBI V_D_Employee' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    PBI_V_D_EMPLOYEE = Source{[Schema="PBI",Item="V_D_EMPLOYEE"]}[Data]
+				in
+				    PBI_V_D_EMPLOYEE
+
+	annotation PBI_ResultType = Table
+

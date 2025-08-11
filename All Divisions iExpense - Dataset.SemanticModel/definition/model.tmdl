@@ -1,0 +1,30 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.144.878.0 (25.06)+9cca29236de5114792f4d7188221f91ad4a5cc50
+
+annotation PBI_QueryOrder = ["PBI V_D_Date","PBI V_D_Employee","PBI V_D_Project","PBI V_D_Types","PBI V_D_AP_Notes","PBI V_F_Expense","PBI V_D_GL_Account_Exp","PBI V_D_Task","Server","Database","D_Security_Fin_Loc","DWH D_Finance_CE","Definitions"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'PBI V_D_Date'
+ref table 'PBI V_D_Employee'
+ref table 'PBI V_D_Project'
+ref table 'PBI V_D_Types'
+ref table 'PBI V_D_AP_Notes'
+ref table 'PBI V_F_Expense'
+ref table 'PBI V_D_GL_Account_Exp'
+ref table 'PBI V_D_Task'
+ref table D_Security_Fin_Loc
+ref table 'DWH D_Finance_CE'
+ref table Definitions
+
+ref cultureInfo en-US
+

@@ -1,0 +1,89 @@
+table 'PBI V_D_Project'
+	lineageTag: 4e16b53c-f6ad-4b78-94ac-bff41dd266a5
+
+	column PROJECT_NAME
+		dataType: string
+		lineageTag: 09bf1f19-1ee4-49ab-892a-d1a6ec0401e1
+		summarizeBy: none
+		sourceColumn: PROJECT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROJECT_NUMBER
+		dataType: string
+		lineageTag: 17099d1f-2492-4df5-9d5f-92118ea651b2
+		summarizeBy: none
+		sourceColumn: PROJECT_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CITY
+		dataType: string
+		lineageTag: 55e98e15-a28d-4be4-8e0e-0888fe63ac01
+		summarizeBy: none
+		sourceColumn: CITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column REGION
+		dataType: string
+		lineageTag: 378b9b51-cf7a-4bdd-bc76-aa4e8058e832
+		summarizeBy: none
+		sourceColumn: REGION
+
+		annotation SummarizationSetBy = Automatic
+
+	column COUNTRY
+		dataType: string
+		lineageTag: d4991342-a0ac-434b-accf-e5058d050f9a
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZIPCODE
+		dataType: int64
+		formatString: 0
+		lineageTag: 06456f3f-1440-4280-b07e-a3755cab14c1
+		summarizeBy: none
+		sourceColumn: ZIPCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELETE_FLG
+		dataType: string
+		lineageTag: 71a1ae74-cd40-4785-9d23-9652694eec9f
+		summarizeBy: none
+		sourceColumn: DELETE_FLG
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceSystemID
+		dataType: double
+		lineageTag: ee0b9a4d-4c89-493b-85a7-ed609264d369
+		summarizeBy: none
+		sourceColumn: SourceSystemID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column KEY_Project
+		dataType: string
+		lineageTag: 20724408-3b07-4bb4-aa26-746a4e26ce36
+		summarizeBy: none
+		sourceColumn: KEY_Project
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PBI V_D_Project' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    PBI_V_D_Project = Source{[Schema="PBI",Item="V_D_Project"]}[Data]
+				in
+				    PBI_V_D_Project
+
+	annotation PBI_ResultType = Table
+

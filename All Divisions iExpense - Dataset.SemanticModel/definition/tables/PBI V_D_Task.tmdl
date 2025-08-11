@@ -1,0 +1,38 @@
+table 'PBI V_D_Task'
+	lineageTag: dbb69cc8-0c87-4979-a96b-6910e49bc19b
+
+	column KEY_Task
+		dataType: string
+		lineageTag: ebc5e5d5-5e75-43d0-b64a-ca9cf9217f6e
+		summarizeBy: none
+		sourceColumn: KEY_Task
+
+		annotation SummarizationSetBy = Automatic
+
+	column TASK_NAME
+		dataType: string
+		lineageTag: a7d8d289-4d7e-4264-a434-3cef3deddfd4
+		summarizeBy: none
+		sourceColumn: TASK_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column TASK_NUMBER
+		dataType: string
+		lineageTag: c9a1b7ec-dff6-4b0b-849c-a48f5af527da
+		summarizeBy: none
+		sourceColumn: TASK_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PBI V_D_Task' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    PBI_V_D_Task = Source{[Schema="PBI",Item="V_D_Task"]}[Data]
+				in
+				    PBI_V_D_Task
+
+	annotation PBI_ResultType = Table
+
