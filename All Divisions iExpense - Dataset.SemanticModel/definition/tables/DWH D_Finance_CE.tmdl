@@ -1,0 +1,101 @@
+table 'DWH D_Finance_CE'
+	lineageTag: 97f8aa06-9c2d-43d8-ae6d-efee215cda4b
+
+	column KEY_Finance_Location
+		dataType: string
+		lineageTag: ca701efa-8454-4308-b2f0-067546ce1ad6
+		summarizeBy: none
+		sourceColumn: KEY_Finance_Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division_Code
+		dataType: string
+		lineageTag: cc10567c-a26c-4db9-9f69-254944694f0d
+		summarizeBy: none
+		sourceColumn: Division_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division_Name
+		dataType: string
+		lineageTag: 008ef744-1478-45bd-bbe1-9b3ab47f2e67
+		summarizeBy: none
+		sourceColumn: Division_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region_Name
+		dataType: string
+		lineageTag: c0055d2e-7a30-4357-92a3-acdcf05eac90
+		summarizeBy: none
+		sourceColumn: Region_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country_Code
+		dataType: string
+		lineageTag: b0c6b77a-8bd2-4646-9016-aa5aeaa1403f
+		summarizeBy: none
+		sourceColumn: Country_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country_Name
+		dataType: string
+		lineageTag: f5d104fc-02ad-4855-9700-94791e06fc1e
+		summarizeBy: none
+		sourceColumn: Country_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Entity_Code
+		dataType: string
+		lineageTag: 95df5313-6886-4765-a94d-802e15041454
+		summarizeBy: none
+		sourceColumn: Entity_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Finance_Location_Code
+		dataType: string
+		lineageTag: 469b7835-5937-4886-a4fe-55418b36d420
+		summarizeBy: none
+		sourceColumn: Finance_Location_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceSystemID
+		dataType: string
+		lineageTag: 59dac8e8-b387-4a33-8099-3b4922995f9d
+		summarizeBy: none
+		sourceColumn: SourceSystemID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Finance_Location_Name
+		dataType: string
+		lineageTag: 5ae195cc-8a45-4b15-a7dd-2fc6c1689b59
+		summarizeBy: none
+		sourceColumn: Finance_Location_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column = 'DWH D_Finance_CE'[Country_Code]
+		lineageTag: 19b9d6cb-0458-4eca-97fb-7fd2945e80f4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DWH D_Finance_CE' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    DWH_D_Finance_CE = Source{[Schema="DWH",Item="D_Finance_CE"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(DWH_D_Finance_CE,{"elt_run_id", "elt_inserted_date"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

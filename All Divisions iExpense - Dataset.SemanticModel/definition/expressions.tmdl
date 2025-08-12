@@ -1,0 +1,10 @@
+expression Server = "HSCUSEA2SQLD001.database.windows.net" meta [IsParameterQuery=true, List={"HSCUSEA2SQLD001.database.windows.net", "HSCUSEA2SQLQ001.database.windows.net", "HSCUSEA2SQLP001.database.windows.net"}, DefaultValue=..., Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 96cfd73f-42a3-4347-8412-48c86a6e629f
+
+	annotation PBI_ResultType = Exception
+
+expression Database = "DWHDEV1" meta [IsParameterQuery=true, List={"DWHDEV1", "DWHTST1", "DWHPRD1"}, DefaultValue=..., Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 9e6e0e61-c12e-4c42-80e1-158ca37bc55f
+
+	annotation PBI_ResultType = Exception
+

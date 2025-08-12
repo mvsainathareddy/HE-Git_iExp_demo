@@ -1,0 +1,62 @@
+table 'PBI V_D_Types'
+	lineageTag: a45b500f-4504-472c-b32c-36c0ae6a88be
+
+	column Key_Type
+		dataType: string
+		lineageTag: f4c77e52-7235-46ae-bff1-becb4c1ed77e
+		summarizeBy: none
+		sourceColumn: Key_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type_Class
+		dataType: string
+		lineageTag: b52fb53b-a0e4-459a-85c7-a9bf9b90eef4
+		summarizeBy: none
+		sourceColumn: Type_Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type_Code
+		dataType: string
+		lineageTag: 609e4584-6e69-4478-8b84-c2293a86e243
+		summarizeBy: none
+		sourceColumn: Type_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type_Desc
+		dataType: string
+		lineageTag: a7b68d69-21b3-4f36-9aac-13226c827c5b
+		summarizeBy: none
+		sourceColumn: Type_Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type_Src_ID
+		dataType: string
+		lineageTag: 3497ed3a-5891-4178-9daf-b0c27a7254b8
+		summarizeBy: none
+		sourceColumn: Type_Src_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceSystemID
+		dataType: string
+		lineageTag: 9ca1bbcf-6bbd-41ac-a6d1-05aa42a4a5c2
+		summarizeBy: none
+		sourceColumn: SourceSystemID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PBI V_D_Types' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    PBI_V_D_Types = Source{[Schema="PBI",Item="V_D_Types"]}[Data]
+				in
+				    PBI_V_D_Types
+
+	annotation PBI_ResultType = Table
+

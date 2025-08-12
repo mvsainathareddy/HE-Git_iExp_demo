@@ -1,0 +1,32 @@
+table Definitions
+	lineageTag: 60225dc7-2143-4d2c-a446-91c5a6717304
+
+	column KPI
+		dataType: string
+		lineageTag: ff4fb694-3d51-4ba1-a6ee-9663307ab2c0
+		summarizeBy: none
+		sourceColumn: KPI
+
+		annotation SummarizationSetBy = Automatic
+
+	column Definition
+		dataType: string
+		lineageTag: 6ce3f08f-0335-406c-a886-b03265e63027
+		summarizeBy: none
+		sourceColumn: Definition
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Definitions = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCskvScxRcK0oSM0rTi1W8MlPTsxR0oEKOxYUFOWXpaYoOObml+aVKKTlFyGUZuYpQJQrOJcWFaXmJVcqxepgGBga7EK0cUC1qGY5g5TBtfvl6+WnwTQoBKUW5BeVKPiV5oKVQowk2ip0h8cCAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [KPI = _t, Definition = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"KPI", type text}, {"Definition", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

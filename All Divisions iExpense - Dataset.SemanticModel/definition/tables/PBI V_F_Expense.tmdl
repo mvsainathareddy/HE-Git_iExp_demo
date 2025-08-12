@@ -1,0 +1,454 @@
+table 'PBI V_F_Expense'
+	lineageTag: a0fd6d55-3a53-45f2-872d-084f17ed6d65
+
+	measure 'Count of exp' = COUNT('PBI V_F_Expense'[EXPENSE_REPORT_NUM])
+		formatString: 0
+		lineageTag: 8a7061a3-03d7-4dbf-8457-7a73c282e1a1
+
+	column KEY_Requestor
+		dataType: string
+		lineageTag: add2f6a6-98f6-44b2-bc72-995978e50266
+		summarizeBy: none
+		sourceColumn: KEY_Requestor
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY_Approver
+		dataType: string
+		lineageTag: 8b47a026-d0f4-44ba-983d-f1193fec1d77
+		summarizeBy: none
+		sourceColumn: KEY_Approver
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY_Requestor_Org_ID
+		dataType: string
+		lineageTag: 4cb4dd67-dd80-467e-a0eb-54cc3533b050
+		summarizeBy: none
+		sourceColumn: KEY_Requestor_Org_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY_Supplier
+		dataType: string
+		lineageTag: df2eacab-8a37-450b-969d-2c2effba9a41
+		summarizeBy: none
+		sourceColumn: KEY_Supplier
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY_GL_ACCOUNT
+		dataType: string
+		lineageTag: 7fed23bf-5069-4b72-82cc-eae7b28baeb0
+		summarizeBy: none
+		sourceColumn: KEY_GL_ACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY_Project
+		dataType: string
+		lineageTag: 4380ccbe-9344-44d1-a3b0-d7c742144d38
+		summarizeBy: none
+		sourceColumn: KEY_Project
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY_Req_Int_Org
+		dataType: string
+		lineageTag: 11431b8c-d312-46d4-ae96-4ffd1e09830a
+		summarizeBy: none
+		sourceColumn: KEY_Req_Int_Org
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY_Operating_Unit_Org
+		dataType: string
+		lineageTag: 21274928-5d19-47ba-81da-081d4a9f0420
+		summarizeBy: none
+		sourceColumn: KEY_Operating_Unit_Org
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key_Finance_Location
+		dataType: string
+		lineageTag: 8c3fe7ad-5eed-435e-b8b9-efb1b93624f5
+		summarizeBy: none
+		sourceColumn: Key_Finance_Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key_Type
+		dataType: string
+		lineageTag: d5958929-f520-4dad-b780-1a1b7853b869
+		summarizeBy: none
+		sourceColumn: Key_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY_TASK
+		dataType: string
+		lineageTag: 52639d70-3581-4930-8d8f-b24ea9fa9b09
+		summarizeBy: none
+		sourceColumn: KEY_TASK
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key_Notes
+		dataType: string
+		lineageTag: 61a1e367-c719-4102-a54f-a6a5aa83b23d
+		summarizeBy: none
+		sourceColumn: Key_Notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key_Status
+		dataType: string
+		lineageTag: 04927c23-7afb-48dc-9088-cc270ce94b68
+		summarizeBy: none
+		sourceColumn: Key_Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXPENSE_REPORT_NUM
+		dataType: string
+		lineageTag: 7cea99b6-616c-4170-be8d-4e64cb27d6d8
+		summarizeBy: none
+		sourceColumn: EXPENSE_REPORT_NUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACTUAL_EXPENSE_DT
+		dataType: dateTime
+		formatString: dd-mmm-yy
+		lineageTag: 4f308cea-9ffa-48d0-915d-996493144779
+		summarizeBy: none
+		sourceColumn: ACTUAL_EXPENSE_DT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column SUBMITTED_ON_DT
+		dataType: dateTime
+		formatString: DD-MMM-YY
+		lineageTag: 2a7d103b-8a91-457a-9481-87d01b642447
+		summarizeBy: none
+		sourceColumn: SUBMITTED_ON_DT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column EXPENSE_APPROVAL_DT
+		dataType: dateTime
+		formatString: DD-MMM-YY
+		lineageTag: 66cb549c-a027-41bc-bd85-8e9d33227e0e
+		summarizeBy: none
+		sourceColumn: EXPENSE_APPROVAL_DT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column EXPENSE_INVOICE_DT
+		dataType: dateTime
+		formatString: DD-MMM-YY
+		lineageTag: 9f773902-b66a-499d-8a06-65ac36d05c95
+		summarizeBy: none
+		sourceColumn: EXPENSE_INVOICE_DT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column EXPENSE_LAST_STATUS_DATE
+		dataType: dateTime
+		formatString: DD-MMM-YY
+		lineageTag: 3a0956b0-6ce7-49be-b8ce-219d121bc202
+		summarizeBy: none
+		sourceColumn: EXPENSE_LAST_STATUS_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Month_Year_GL
+		dataType: string
+		lineageTag: d8984944-5c1d-4466-9298-fac5b9e9a61d
+		summarizeBy: none
+		sourceColumn: Month_Year_GL
+		sortByColumn: 'Period sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXPENSE_ITEM_QTY
+		dataType: double
+		lineageTag: 7209a046-f5f5-48c1-ae1f-7320dfffee7e
+		summarizeBy: sum
+		sourceColumn: EXPENSE_ITEM_QTY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Requestor_Employee
+		dataType: string
+		lineageTag: f8fe3751-4b58-44aa-bf71-f22bb317140b
+		summarizeBy: none
+		sourceColumn: Requestor_Employee
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employee_Number
+		dataType: string
+		lineageTag: 038658d6-6c29-4afa-9ff3-a9de652c3ccd
+		summarizeBy: none
+		sourceColumn: Employee_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Approver
+		dataType: string
+		lineageTag: 2fb375a9-d771-494f-9953-d846bd6e855d
+		summarizeBy: none
+		sourceColumn: Approver
+
+		annotation SummarizationSetBy = Automatic
+
+	column RQSTN_AMT
+		dataType: double
+		lineageTag: ed079c5c-a7f1-41f4-9f19-ef2ac69a1c28
+		summarizeBy: sum
+		sourceColumn: RQSTN_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TOTAL_EXPENSE_LOCAL
+		dataType: double
+		lineageTag: 72975fed-fd56-40ff-90c0-5137c1b4ad96
+		summarizeBy: sum
+		sourceColumn: TOTAL_EXPENSE_LOCAL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column APPROVED_AMT
+		dataType: double
+		lineageTag: 3dd8d57b-8cf9-4a14-a602-467a5d195e57
+		summarizeBy: sum
+		sourceColumn: APPROVED_AMT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INVOICE_AMOUNT
+		dataType: double
+		lineageTag: 67b92f42-163a-493e-893a-459ac22e2db7
+		summarizeBy: sum
+		sourceColumn: INVOICE_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Purch_Pay_Method
+		dataType: string
+		lineageTag: 5158839b-7b24-4abc-89c5-78c8beef59f9
+		summarizeBy: none
+		sourceColumn: Purch_Pay_Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXPENSE_DIST_ITEM_NUM
+		dataType: string
+		lineageTag: 212ac342-c404-44fb-bf1f-18a3c9316dcf
+		summarizeBy: none
+		sourceColumn: EXPENSE_DIST_ITEM_NUM
+
+		annotation SummarizationSetBy = Automatic
+
+	column ADJUSTMENT_REASON_CODE
+		dataType: string
+		lineageTag: 63b163fc-82b1-4644-84f2-c6450f734bc3
+		summarizeBy: none
+		sourceColumn: ADJUSTMENT_REASON_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column AVG_MILEAGE_RATE
+		dataType: double
+		lineageTag: aec89004-27fa-4e28-a255-fc0698adf996
+		summarizeBy: sum
+		sourceColumn: AVG_MILEAGE_RATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MILEAGE_RATE
+		dataType: double
+		lineageTag: 99e98027-8abb-4624-bfb6-65129647953a
+		summarizeBy: sum
+		sourceColumn: MILEAGE_RATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MERCHANT_NAME
+		dataType: string
+		lineageTag: 297f39e4-48b6-4bb2-9fee-ec4b3118c2c8
+		summarizeBy: none
+		sourceColumn: MERCHANT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUMBER_OF_PEOPLE
+		dataType: string
+		lineageTag: d3d03efa-ddc7-410b-b95b-c3b97600371e
+		summarizeBy: none
+		sourceColumn: NUMBER_OF_PEOPLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PEOPLE_NAME
+		dataType: string
+		lineageTag: f3a499de-6f5e-40cf-aead-503df6bfa88c
+		summarizeBy: none
+		sourceColumn: PEOPLE_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPANY
+		dataType: string
+		lineageTag: e0c2fea2-d45c-4c3a-995c-e3e4869015c9
+		summarizeBy: none
+		sourceColumn: COMPANY
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECEIPT_MISSING_FLG
+		dataType: string
+		lineageTag: 75612c94-8894-4a22-973a-6c37d3437154
+		summarizeBy: none
+		sourceColumn: RECEIPT_MISSING_FLG
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRIP_DISTANCE
+		dataType: string
+		lineageTag: 369c78bd-7734-419d-96a8-99329c7d066a
+		summarizeBy: none
+		sourceColumn: TRIP_DISTANCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column JUSTIFICATION
+		dataType: string
+		lineageTag: 956479be-894e-4958-8097-54465519a30f
+		summarizeBy: none
+		sourceColumn: JUSTIFICATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceSystemID
+		dataType: string
+		lineageTag: a81c4144-da75-48eb-bc65-56332cb67c2b
+		summarizeBy: none
+		sourceColumn: SourceSystemID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EXPENSE_DT
+		dataType: dateTime
+		formatString: DD-MMM-YY
+		lineageTag: a6e485da-d8ef-4fa9-9624-1b7cd16009c3
+		summarizeBy: none
+		sourceColumn: EXPENSE_DT
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column SORT_GL_DATE
+		dataType: string
+		lineageTag: f4533190-27e4-440c-bae7-c449d25798a8
+		summarizeBy: none
+		sourceColumn: SORT_GL_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period sort' = year('PBI V_F_Expense'[EXPENSE_LAST_STATUS_DATE])*12 + MONTH('PBI V_F_Expense'[EXPENSE_LAST_STATUS_DATE])
+		formatString: 0
+		lineageTag: c355a8c0-2dd1-4887-8bae-65ada4194a7d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column AMOUNT_USD
+		dataType: double
+		lineageTag: 0e9e353c-aed0-4a2b-8ec0-a54ac1630386
+		summarizeBy: sum
+		sourceColumn: AMOUNT_USD
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Key_User
+		dataType: string
+		lineageTag: 2e09fc13-03b6-47f1-b6c9-d66516eb589c
+		summarizeBy: none
+		sourceColumn: Key_User
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key_Invoice
+		dataType: string
+		lineageTag: 408ea5b3-e79e-4e63-84ab-0a4ed8db60b2
+		summarizeBy: none
+		sourceColumn: Key_Invoice
+
+		annotation SummarizationSetBy = Automatic
+
+	column Audited_by
+		dataType: string
+		lineageTag: 9e62f1dd-c5dd-4a94-bfaf-56c38b60f822
+		summarizeBy: none
+		sourceColumn: Audited_by
+
+		annotation SummarizationSetBy = Automatic
+
+	column STATUS_CODE
+		dataType: string
+		lineageTag: bf188107-8e01-4e5a-a9cb-4f4856a7efd8
+		summarizeBy: none
+		sourceColumn: STATUS_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PBI V_F_Expense' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    PBI_V_F_Expense = Source{[Schema="PBI",Item="V_F_Expense"]}[Data],
+				    #"Duplicated Column" = Table.DuplicateColumn(PBI_V_F_Expense, "ACTUAL_EXPENSE_DT", "ACTUAL_EXPENSE_DT - Copy"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column",{{"ACTUAL_EXPENSE_DT - Copy", "EXPENSE_DT"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

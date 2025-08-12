@@ -1,0 +1,57 @@
+table D_Security_Fin_Loc
+	lineageTag: d85fc81b-f238-4c6a-8236-a44f06ed9433
+
+	column TYPE
+		dataType: string
+		lineageTag: d529cbd3-ab3b-499b-958c-03f1b7ae9854
+		summarizeBy: none
+		sourceColumn: TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column USER_ID
+		dataType: string
+		lineageTag: 4c42d481-5d63-4b61-9e29-90e8c1262946
+		summarizeBy: none
+		sourceColumn: USER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALUE
+		dataType: string
+		lineageTag: 99ba52f9-c264-41b5-8bad-d677083676c8
+		summarizeBy: none
+		sourceColumn: VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+	column elt_inserted_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6bf5b973-0ac3-424f-8349-8bdf04890aa3
+		summarizeBy: none
+		sourceColumn: elt_inserted_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column elt_run_id
+		dataType: string
+		lineageTag: a42f74ec-827d-4fdf-bb1a-f0640d4f1eec
+		summarizeBy: none
+		sourceColumn: elt_run_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D_Security_Fin_Loc = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(#"Server", #"Database"),
+				    Navigation = Source{[Schema="DWH",Item="D_Security"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(Navigation, each ([TYPE] = "FINLC") and ([VALUE] <> "000")),
+				    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"DESCRIPTION"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

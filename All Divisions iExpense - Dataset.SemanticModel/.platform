@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "All Divisions iExpense - Dataset"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "60249523-3f38-43c8-8157-6412f625192f"
+  }
+}

@@ -1,0 +1,126 @@
+table 'PBI V_D_GL_Account_Exp'
+	lineageTag: 0f51ba6b-3257-491f-ac32-906f9c8f6b25
+
+	column GL_Entity
+		dataType: string
+		lineageTag: d647ee34-80df-490c-80d6-88e8cef2af9f
+		summarizeBy: none
+		sourceColumn: GL_Entity
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Location
+		dataType: string
+		lineageTag: 2b1f4590-6a10-4b1f-b232-d47aee0f7028
+		summarizeBy: none
+		sourceColumn: GL_Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Activity
+		dataType: string
+		lineageTag: affe68ad-7c90-44fd-8c2c-870e1494d276
+		summarizeBy: none
+		sourceColumn: GL_Activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Activity_Desc
+		dataType: string
+		lineageTag: 0502bb3f-8278-4b12-8525-1d2870e40244
+		summarizeBy: none
+		sourceColumn: GL_Activity_Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Account_Number
+		dataType: string
+		lineageTag: 4b5b6344-4816-4a20-be5e-be4318e4eadf
+		summarizeBy: none
+		sourceColumn: GL_Account_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Activity_TYPE
+		dataType: string
+		lineageTag: 5c06f16a-5f18-4efa-a28e-90aef58cd44d
+		summarizeBy: none
+		sourceColumn: Activity_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Account_Details
+		dataType: string
+		lineageTag: 7ebc8d91-23df-43f7-9587-e5cb24b05787
+		summarizeBy: none
+		sourceColumn: GL_Account_Details
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Account_Details_Description
+		dataType: string
+		lineageTag: 685359c6-1f31-4dcc-ada0-ea73b145164b
+		summarizeBy: none
+		sourceColumn: GL_Account_Details_Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Account_ID
+		dataType: string
+		lineageTag: 5c307bf1-12c3-467a-9c17-9bb260928608
+		summarizeBy: none
+		sourceColumn: GL_Account_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Business_Unit
+		dataType: string
+		lineageTag: 241be3d6-1d15-4920-b588-a7db791034fa
+		summarizeBy: none
+		sourceColumn: GL_Business_Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Object_Account
+		dataType: string
+		lineageTag: 88a02049-dcfd-4ef3-bfe2-302a2299f5f5
+		summarizeBy: none
+		sourceColumn: GL_Object_Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column GL_Account_Desc
+		dataType: string
+		lineageTag: 57bac29b-5099-429a-8ea6-d1d408200263
+		summarizeBy: none
+		sourceColumn: GL_Account_Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column SourceSystemID
+		dataType: string
+		lineageTag: d5472865-6dc3-4d4e-879f-8f27fcb21def
+		summarizeBy: none
+		sourceColumn: SourceSystemID
+
+		annotation SummarizationSetBy = Automatic
+
+	column KEY_GL_ACCOUNT
+		dataType: string
+		lineageTag: e40415e7-4a9f-49d8-b7a6-1a15a62d78c6
+		summarizeBy: none
+		sourceColumn: KEY_GL_ACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'PBI V_D_GL_Account_Exp' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    PBI_V_D_GL_Account_Exp = Source{[Schema="PBI",Item="V_D_GL_Account_Exp"]}[Data]
+				in
+				    PBI_V_D_GL_Account_Exp
+
+	annotation PBI_ResultType = Table
+
