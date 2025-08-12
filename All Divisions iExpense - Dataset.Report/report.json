@@ -20,12 +20,22 @@
   "sections": [
     {
       "config": "{}",
-      "displayName": "Page 1",
+      "displayName": "EMP report",
       "displayOption": 1,
       "filters": "[]",
       "height": 720.00,
       "name": "88424c1f162b60a0e7db",
-      "visualContainers": [],
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"a7ff90d0205adb2e7004\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":84.99507834738885,\"z\":0,\"width\":679.9606267791108,\"height\":483.81813828513657}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"PBI V_D_Employee.Employee_Id\"},{\"queryRef\":\"PBI V_D_Employee.Employee_Number\"},{\"queryRef\":\"PBI V_D_Employee.Full_Name\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"PBI V_D_Employee\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Employee_Id\"},\"Name\":\"PBI V_D_Employee.Employee_Id\",\"NativeReferenceName\":\"Employee_Id\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Employee_Number\"},\"Name\":\"PBI V_D_Employee.Employee_Number\",\"NativeReferenceName\":\"Employee_Number\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Full_Name\"},\"Name\":\"PBI V_D_Employee.Full_Name\",\"NativeReferenceName\":\"Full_Name\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 483.82,
+          "width": 679.96,
+          "x": 0.00,
+          "y": 85.00,
+          "z": 0.00
+        }
+      ],
       "width": 1280.00
     }
   ]
